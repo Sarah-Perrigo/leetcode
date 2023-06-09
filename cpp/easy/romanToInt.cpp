@@ -1,4 +1,5 @@
 // This program takes a roman numeral and converts it to an integer
+// Rating: Easy
 
 # include <iostream>
 
