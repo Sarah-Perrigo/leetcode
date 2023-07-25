@@ -13,19 +13,15 @@ class Solution(object):
         :rtype: List[int]
         """
 
+        numToIndex = {}
         length = len(nums)
-        solution = []
 
         for i in range (length):
-            if (target - nums[i]) in nums[i+1:length]:
-                firstNumsLength = len(nums[0:i])
-                secondNums = nums[i+1:length]
-                solution.append(i)
-                solution.append(secondNums.index(target - nums[i]) + firstNumsLength + 1)
-                return solution
+            if target - nums[i] in numToIndex:
+                return [numToIndex[target - nums[i]], i]
+            numToIndex[nums[i]] = i
         return []
-
-            
+  
 
 """
     Performance: Runtime beats 58%, Memory beats 98%
